@@ -1,11 +1,8 @@
-name: "authService"
+name: "currency price"
 
 on:
   push:
     branches: [ main ]
-    paths:
-      - "authService/**"
-      - ".github/workflow/services_ci.yaml"
 
 jobs:
   test:
@@ -20,7 +17,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: |-
-          cd authService
-          ls
           npm install
           npm test
