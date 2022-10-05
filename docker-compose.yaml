@@ -1,0 +1,16 @@
+version: '3'
+
+networks:
+  microservices:
+    driver: bridge
+
+services:
+  currency_price:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    networks:
+      - microservices
