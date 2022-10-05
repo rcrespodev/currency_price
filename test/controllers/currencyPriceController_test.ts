@@ -23,19 +23,19 @@ describe('Currency Price Controller with Mock Repository', () => {
 
     describe('USD', () => {
         it('should return USD data', () => {
-            expect(currencyPriceController.getUsd()).toStrictEqual(UsdObject);
+            expect(currencyPriceController.getUsd().currency).toStrictEqual(UsdObject);
         });
     });
 
     describe('GBP', () => {
         it('should return GBP data', () => {
-            expect(currencyPriceController.getGbp()).toStrictEqual(GbpObject);
+            expect(currencyPriceController.getGbp().currency).toStrictEqual(GbpObject);
         });
     });
 
     describe('EUR', () => {
         it('should return EUR data', () => {
-            expect(currencyPriceController.getEur()).toStrictEqual(EurObject);
+            expect(currencyPriceController.getEur().currency).toStrictEqual(EurObject);
         });
     });
 });

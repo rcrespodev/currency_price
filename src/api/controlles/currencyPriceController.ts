@@ -1,4 +1,4 @@
-import {Controller, Get} from "@nestjs/common";
+import {Controller, Get, Render} from "@nestjs/common";
 import {BaseCurrency, BaseRate, ValidCurrencies} from "../../app/commons/domain/baseCurrency";
 import {queryBus} from "../../app/queryBus";
 import {BaseQuery} from "ts-cqrs/build/esm/query/baseQuery";
@@ -8,18 +8,27 @@ import {Query} from "ts-cqrs/build/esm/query/query";
 @Controller()
 export class CurrencyPriceController {
     @Get('currency-price/USD')
-    getUsd(): BaseCurrency {
-        return this.getCurrency("USD")
+    @Render('currentPrice')
+    getUsd(): CurrencyControllerResponse {
+        return {
+            currency: this.getCurrency("USD")
+        }
     }
 
     @Get('currency-price/GBP')
-    getGbp(): BaseCurrency {
-        return this.getCurrency("GBP")
+    @Render('currentPrice')
+    getGbp(): CurrencyControllerResponse {
+        return {
+            currency: this.getCurrency("GBP")
+        }
     }
 
     @Get('currency-price/EUR')
-    getEur(): BaseCurrency {
-        return this.getCurrency("EUR")
+    @Render('currentPrice')
+    getEur(): CurrencyControllerResponse {
+        return {
+            currency: this.getCurrency("EUR")
+        }
     }
 
     private getCurrency(queryId: string): BaseCurrency {
@@ -47,4 +56,8 @@ export class CurrencyPriceController {
         })
         return currency
     }
+}
+
+export type CurrencyControllerResponse = {
+    currency: BaseCurrency
 }

@@ -1,0 +1,24 @@
+{{> header title="Bitcoin Price item"}}
+
+<div class="item">
+    <div class="item_target_currency">Exchange: {{currency.targetCurrency}}</div>
+    <br>
+    <div class="item_deep_prop">Time
+    </div>
+    <ul>
+        <li>Update at: {{currency.time.updated}}</li>
+        <li>Update at Iso: {{currency.time.updatedISO}}</li>
+        <li>Update at Uk: {{currency.time.updateduk}}</li>
+    </ul>
+    <br><br>
+    <div class="item_deep_prop">Bpi</div>
+    <ul>
+        <li>Code: {{currency.bpi.code}}</li>
+        <li>Symbol: {{currency.bpi.symbol}}</li>
+        <li>Rate: {{currency.bpi.rate}}</li>
+        <li>Description: {{currency.bpi.description}}</li>
+        <li>Rate in Float: {{currency.bpi.rate_float}}</li>
+    </ul>
+
+</div>
+{{> footer}}

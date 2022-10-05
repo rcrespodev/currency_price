@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="index.js" type="module"></script>
+    <title>Bitcoin Price</title>
+</head>
+<body>
+<header>
+    <div class="header_title"><h2>Bitcoin Price</h2></div>
+</header>
+
+<div class="introduction">
+    <h2>Welcome to Bitcoin Price Home page</h2>
+    <h4>¿How Works?</h4>
+    <p>
+        The user can display the current price of Bitcoin currency in tree different exchanges.
+        The Backend expose tree endpoints, one for each use cases.
+        Then, the Backend fetch the data from <a href="https://api.coindesk.com/v1/bpi/currentprice.json">CoinDesk
+        API</a> and render it using handlebars templates.
+    </p>
+</div>
+<br>
+<div class="app_commands">
+    <h3>Chose your Exchange</h3>
+    <div class="test">
+        <div class="app_buttons">
+            <button class="button" id="usd_cmd">USD</button>
+            <button class="button" id="eur_cmd">EUR</button>
+            <button class="button" id="gbp_cmd">GBP</button>
+        </div>
+    </div>
+</div>
+
+<footer>Visit the <a href="https://github.com/rcrespodev/currency_price">GitHub Repository</a> of project.</footer>
+</body>
+</html>
