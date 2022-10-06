@@ -22,9 +22,10 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Bitcoin Price
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
 
 ## Installation
 
@@ -32,42 +33,25 @@
 $ npm install
 ```
 
-## Running the app
+## Deploy and Run the app
 
 ```bash
-# development
-$ npm run start
+# Build test and deploy docker image
+make run
 
-# watch mode
-$ npm run start:dev
+# if you don´t have make
+docker-compose -f docker-compose.yaml up -d --build
 
-# production mode
-$ npm run start:prod
+# check container
+# command:
+docker ps -f name=currency_price_currency_price
+# output:
+CONTAINER ID   IMAGE                           COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+9e52ad83d434   currency_price_currency_price   "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   currency_price_currency_price_1
 ```
 
 ## Test
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm test
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
