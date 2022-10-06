@@ -62,5 +62,5 @@ different exchanges (usd, eur or gbp).
 The Backend expose tree endpoints, one for each use cases.
 Then, the Backend fetch the data from CoinDesk API and render it using handlebars templates.
 
-![home page](images/img.png)
-![price view](images/img_1.png)
+![home page](images/img_1.png)
+![price view](images/img.png)
