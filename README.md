@@ -30,7 +30,7 @@
 ## Installation
 
 ```bash
-$ npm install
+npm install
 ```
 
 ## Deploy and Run the app
@@ -38,13 +38,19 @@ $ npm install
 ```bash
 # Build test and deploy docker image
 make run
+```
 
+```bash
 # if you don´t have make
 docker-compose -f docker-compose.yaml up -d --build
+```
 
+```bash
 # check container
+
 # command:
 docker ps -f name=currency_price_currency_price
+
 # output:
 CONTAINER ID   IMAGE                           COMMAND                  CREATED          STATUS          PORTS                                       NAMES
 9e52ad83d434   currency_price_currency_price   "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   currency_price_currency_price_1
