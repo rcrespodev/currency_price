@@ -9,6 +9,7 @@ import {BaseService} from "./commons/service/baseService";
 import {GbpQueryHandler} from "./gbp/gbpQueryHandler";
 import {EurAppService} from "./eur/eurAppService";
 import {EurQueryHandler} from "./eur/eurQueryHandler";
+import {VendorCurrencyRepository} from "./commons/infrastructure/vendorCurrencyRepository";
 
 export type QueryBusFactoryOptions = {
     prdRepository: boolean // true: use prd repository(https://api.coindesk.com/v1/bpi/currentprice.json). Otherwise use mock repo.
@@ -33,7 +34,9 @@ export class QueryBusFactory {
                 this._repository = new MockCurrencyRepository()
                 break
             default:
-                this._repository = new MockCurrencyRepository()
+                const vendorRepository = new VendorCurrencyRepository()
+                vendorRepository.setup()
+                this._repository = vendorRepository
         }
 
         this._usdService = new UsdAppService(this._repository)

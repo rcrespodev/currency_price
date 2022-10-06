@@ -16,7 +16,7 @@ describe('Currency Price Controller with Mock Repository', () => {
         currencyPriceController = app.get<CurrencyPriceController>(CurrencyPriceController);
 
         // instance queryBus global
-        new QueryBusFactory({
+        await new QueryBusFactory({
             prdRepository: false
         })
     });

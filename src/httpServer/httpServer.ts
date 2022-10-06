@@ -35,7 +35,7 @@ export class HttpServer {
     Run() {
         // instance queryBus global
         new QueryBusFactory({
-            prdRepository: false
+            prdRepository: true
         })
 
         // Run http server
